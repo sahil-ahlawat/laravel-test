@@ -7,7 +7,7 @@ jQuery(document).ready(function(){
 		e.preventDefault();
 		// Validating inputs
 		var error = 0;
-		jQuery('form.createProduct input').each(function(){
+		jQuery('.card form.createProduct input').each(function(){
 		$(this).css('border',"1px solid black");
 		if( !$(this).val() ) {
           $(this).css('border',"1px solid red");
@@ -28,7 +28,7 @@ jQuery(document).ready(function(){
         json: 'application/json'
     },
 	data: jQuery('form.createProduct').serialize(),
-	url: base+"/api/product/create", success: function(data){
+	url: base+"/product/create", success: function(data){
     $(".createmsg").text(data.message);
     $(".createmsg").show();
 	setTimeout(function(){ $(".createmsg").hide(); }, 5000);
@@ -58,7 +58,7 @@ jQuery(document).ready(function(){
     accepts: {
         json: 'application/json'
     },
-	url: base+"/api/product/delete?id="+jQuery(this).attr('pid'), success: function(data){
+	url: base+"/product/delete?id="+jQuery(this).attr('pid'), success: function(data){
 	
 	setTimeout(function(){  }, 2000);
 	get_products(100, 0);
@@ -89,7 +89,7 @@ jQuery(document).ready(function(){
         json: 'application/json'
     },
 	data: jQuery('#myModal form.createProduct').serialize(),
-	url: base+"/api/product/edit", success: function(data){
+	url: base+"/product/edit", success: function(data){
     $("#myModal .createmsg").text(data.message);
     $("#myModal .createmsg").show();
 	setTimeout(function(){ $("#myModal .createmsg").hide(); }, 5000);
@@ -105,7 +105,7 @@ jQuery(document).ready(function(){
     accepts: {
         json: 'application/json'
     },
-	url: base+"/api/product/list?limit="+limit+"&offset="+offset, success: function(data){
+	url: base+"/product/list?limit="+limit+"&offset="+offset, success: function(data){
 		 
 		 var mhtml = "";
 		 for (var i = 0; i < data.length; i++){

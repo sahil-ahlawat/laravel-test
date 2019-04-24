@@ -15,13 +15,14 @@ use Illuminate\Http\Request;
 
 Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
-Route::get('/product/create', 'ProductController@create_product');
+Route::group(['middleware' => 'auth:api'], function(){
+	Route::get('/product/create', 'ProductController@create_product');
 	Route::get('/product/edit', 'ProductController@update_product');
 	Route::get('/product/delete', 'ProductController@delete_product');
 	Route::get('/product/list', 'ProductController@get_product_list');
 	Route::get('/product/get', 'ProductController@get_product');
-Route::group(['middleware' => 'auth:api'], function(){
-Route::post('details', 'API\UserController@details');
+
+	Route::post('details', 'API\UserController@details');
 });
 	
 	
