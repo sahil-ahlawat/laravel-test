@@ -4,6 +4,8 @@ Technologies used :
 
 2: Laravel 5.8 (Passport, Auth, Middleware)
 
+3: GIT -> I have Created a public repo for this project with detailed readme file with instillation steps
+
 This Application has two parts. Web and REST API. 
 
 Web Authentication using  Laravel's built in Auth system. Web routes are protected by Auth:web middleware.
