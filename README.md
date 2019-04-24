@@ -2,8 +2,6 @@ Technologies used :
 
 1: AWS -> I have created a AWS ec2 (Ubuntu with Lamp Stack and PHPMYADMIN) instance for this test project. 
 
-
-
 2: Laravel 5.8 (Passport, Auth, Middleware)
 
 This Application has two parts. Web and REST API. 
@@ -28,3 +26,16 @@ Step 3 : Setting Up Passport Personal Access Client. I have created API using la
 			Run : php artisan --force passport:install
 			
 			
+Rest Api : 
+Header to be sent with every request ( key : Accept, Value : application/json )
+
+Login : api/login (email and password)			
+Register : api/register (name,email, password, c_password)			
+Details Api : api/details (only auth header)
+Create Product : /product/create' (auth header, Product name, Category, Price)
+edit Product : /product/edit' (auth header, Product name, Category, Price)
+delete Product : /product/delete' (auth header, Product Id)
+List Product : /product/list' (auth header, limit, offset)
+
+Note* : Auth Header (Key : Authorization, Value : Bearer <token> )
+				
